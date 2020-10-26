@@ -9,7 +9,7 @@
 int printd(va_list list)
 {
 	int num, size, div;
-	unsigned long int d;
+	unsigned int d;
 
 	num = (va_arg(list, int));
 	div = 1;
