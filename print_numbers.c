@@ -46,6 +46,6 @@ int printi(va_list list)
 {
 	int num;
 
-	num += printd(list);
+	num = printd(list);
 	return (num);
 }
