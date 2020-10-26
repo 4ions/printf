@@ -22,6 +22,12 @@ int (*verification(char a))(va_list);
 
 #ifndef STRUCT_H
 #define STRUCT_H
+/**
+ *struct conditionals - struct op
+ *
+ *@spec: specifications to comparate
+ *@func: function associated
+ */
 typedef struct conditionals
 {
 	char spec;

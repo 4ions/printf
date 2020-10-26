@@ -1,19 +1,20 @@
 #include "holberton.h"
 /**
- *_puts - prints a string
- *@str: string in
+ *prints - prints a string
+ *@list: list of arguments
  *
- *Return: no return
+ *Return: return size of string
  */
 int prints(va_list list)
 {
 
 	int i = 0, size = 0;
 	char *string;
+
 	string = va_arg(list, char *);
-	if(!string)
+	if (!string)
 		string = "(null)";
-	for (i= 0; string[i] != '\0'; i++)
+	for (i = 0; string[i] != '\0'; i++)
 	{
 		_ourPrint(string[i]);
 		size++;
@@ -22,7 +23,7 @@ int prints(va_list list)
 	return (size);
 }
 /**
- *_printc - prints a string
+ *printc - prints a string
  *@list: string in
  *
  *Return: return int
@@ -39,7 +40,7 @@ int printc(va_list list)
 }
 
 /**
- * _putchar - writes the character c to stdout
+ * _ourPrint - writes the character c to stdout
  * @c: The character to print
  *
  * Return: On success 1.
