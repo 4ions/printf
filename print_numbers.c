@@ -56,7 +56,8 @@ int printi(va_list list)
  */
 int nBinary(va_list list)
 {
-	int a[10], n, i, size;
+	int a[10], i, size;
+	unsigned int n;
 
 	n = va_arg(list, int);
 
