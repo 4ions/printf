@@ -1,7 +1,5 @@
 #include "holberton.h"
 #include <stdarg.h>
-
-
 /**
 *_printf - Functions to do the same that printf
 *@format: All the
@@ -25,26 +23,28 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == 'c')
+			if (format[i] != '%')
 			{
-				temp = va_arg(va_print, int);
-				_putchar(temp);
-				i++;
-			}
-			if (format[i + 1] == 's')
-			{
-				temp2 = va_arg(va_print, char *);
-				_puts(temp2);
-				i++;
+				if (format[i + 1] == 'c')
+				{
+					temp = va_arg(va_print, int);
+					write(1, &temp, 1);
+					/**_putchar(temp);*/
+					i++;
+				}
+				if (format[i + 1] == 's')
+				{
+					temp2 = va_arg(va_print, char *);
+					_puts(temp2);
+					i++;
+				}
 			}
 		}
 		else
 		{
-			_putchar(format[i]);
+			write(1, &format[i], 1);
 		}
-
 		format++;
-
 	}
 	_putchar('\n');
 	va_end(va_print);
