@@ -8,23 +8,20 @@
 int _printf(const char *format, ...)
 {
 	va_list va_print;
-	int i = 0, fun;
+	int i = 0, fun = 0;
 	int (*func)(va_list);
 
-	if (format == NULL)
-	{
+	if (!format || (format[0] == '%' && format[1] == '\0'))
 	return (-1);
-	}
 	va_start(va_print, format);
-
-	while(format && format[i])
+	for (i = 0; format && format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
 			if (format[i + 1] != '%')
 			{
 				func = verification(format[i + 1]);
-				if(func != NULL)
+				if (func != NULL)
 				{
 					fun += func(va_print);
 					i++;
@@ -47,7 +44,6 @@ int _printf(const char *format, ...)
 			write(1, &format[i], 1);
 			fun++;
 		}
-		i++;
 	}
 	va_end(va_print);
 	return (fun);
