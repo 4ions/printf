@@ -32,20 +32,23 @@ int _printf(const char *format, ...)
 				else
 				{
 					write(1, &format[i], 1);
+					fun++;
 				}
 			}
 			else
 			{
 				write(1, &format[i], 1);
+				fun++;
 				i++;
 			}
 		}
 		else
 		{
 			write(1, &format[i], 1);
+			fun++;
 		}
 		i++;
 	}
 	va_end(va_print);
-	return (0);
+	return (fun);
 }
