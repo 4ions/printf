@@ -1,19 +1,20 @@
 #include "holberton.h"
 
 /**
- * print_numbers - Function that prints numbers, followed by a new line
- *@separator: String to be printed between numbers
- *@n: number of integers passed to the function
+ * printd - Function that prints numbers, followed by a new line
+ *@list: String to be printed between numbers
+ *Return: ##
  */
 
 int printd(va_list list)
 {
 	unsigned int i;
 	int num, size = 0;
-	num = (va_arg(list, int));
 	unsigned long int d = 1;
 
-	if(num < 0)
+	num = (va_arg(list, int));
+
+	if (num < 0)
 	{
 		size += _ourPrint('-');
 		num = num * -1;
@@ -27,12 +28,18 @@ int printd(va_list list)
 
 	while (d != 0)
 	{
-		size += _ourPrint('0' + num/d);
+		size += _ourPrint('0' + num / d);
 		num %= d;
-		d/= 10;
+		d /= 10;
 	}
 	return (size);
 }
+
+/**
+ *printi - ##
+ * @list: Argument
+ * Return: An integer
+ */
 
 int printi(va_list list)
 {
