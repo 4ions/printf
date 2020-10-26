@@ -29,7 +29,7 @@ int printd(va_list list)
 
 	while (div != 0)
 	{
-		size =+ _ourPrint('0' + d / div);
+		size += _ourPrint('0' + d / div);
 		d %= div;
 		div /= 10;
 	}
