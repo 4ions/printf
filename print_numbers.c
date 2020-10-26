@@ -8,7 +8,6 @@
 
 int printd(va_list list)
 {
-	unsigned int i;
 	int num, size = 0;
 	unsigned long int d = 1;
 
