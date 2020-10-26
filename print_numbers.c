@@ -8,28 +8,30 @@
 
 int printd(va_list list)
 {
-	int num, size = 0;
-	unsigned long int d = 1;
+	int num, size, div;
+	unsigned long int d;
 
 	num = (va_arg(list, int));
+	div = 1;
+	size = 0;
 
 	if (num < 0)
 	{
 		size += _ourPrint('-');
-		num = num * -1;
+		d  = num * -1;
 	}
 	else
 	{
-		num = num;
+		d = num;
 	}
-	while (num / d > 9)
-	d *= 10;
+	while (d / div > 9)
+	div *= 10;
 
-	while (d != 0)
+	while (div != 0)
 	{
-		size += _ourPrint('0' + num / d);
-		num %= d;
-		d /= 10;
+		size =+ _ourPrint('0' + d / div);
+		d %= div;
+		div /= 10;
 	}
 	return (size);
 }
@@ -44,6 +46,6 @@ int printi(va_list list)
 {
 	int num;
 
-	num = printd(list);
+	num += printd(list);
 	return (num);
 }

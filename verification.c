@@ -11,7 +11,7 @@ int (*verification(char a))(va_list)
 	cases list[] = {
 		{'c', printc},
 		{'s', prints},
-		{'d', printi},
+		{'d', printd},
 		{'i', printi},
 		{'\0', '\0'}
 	};
