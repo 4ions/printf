@@ -49,3 +49,26 @@ int printi(va_list list)
 	num = printd(list);
 	return (num);
 }
+/**
+ *nBinary - ##
+ * @list: Argument
+ * Return: An integer
+ */
+int nBinary(va_list list)
+{
+	int a[10], n, i, size;
+
+	n = va_arg(list, int);
+
+	for (i = 0; n > 0; i++)
+	{
+		a[i] = n % 2;
+		n = n / 2;
+	}
+	for (i = i - 1; i >= 0; i--)
+	{
+		_printf("%d", a[i]);
+		size++;
+	}
+	return (size);
+}

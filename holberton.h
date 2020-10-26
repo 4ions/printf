@@ -20,6 +20,7 @@ int (*verification(char a))(va_list);
 int print_numbers(va_list list);
 int printd(va_list list);
 int printi(va_list list);
+int nBinary(va_list list);
 
 #endif
 

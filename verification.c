@@ -13,6 +13,7 @@ int (*verification(char a))(va_list)
 		{'s', prints},
 		{'d', printd},
 		{'i', printi},
+		{'b', nBinary},
 		{'\0', '\0'}
 	};
 	int i = 0;
