@@ -14,11 +14,19 @@ int (*verification(char a))(va_list)
 		{'\0', '\0'}
 	};
 	int i = 0;
+
 	while (list[i].spec != '\0')
 	{
 		if (a == list[i].spec)
+		{
+
 			return (list[i].func);
-		i++;
+			i++;
+		}
+		else
+		{
+			i++;
+		}
 	}
 	return (NULL);
 
