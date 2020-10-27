@@ -66,6 +66,7 @@ int nBinary(va_list list)
 		a[i] = n % 2;
 		n = n / 2;
 	}
+	
 	for (i = i - 1; i >= 0; i--)
 	{
 		_printf("%d", a[i]);
