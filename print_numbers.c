@@ -56,8 +56,8 @@ int printi(va_list list)
  */
 int nBinary(va_list list)
 {
-	int a[1024], i, size;
-	unsigned int n;
+	int i, size;
+	unsigned int n, a[1024];
 
 	n = va_arg(list, int);
 
@@ -66,7 +66,7 @@ int nBinary(va_list list)
 		a[i] = n % 2;
 		n = n / 2;
 	}
-	
+
 	for (i = i - 1; i >= 0; i--)
 	{
 		_printf("%d", a[i]);
