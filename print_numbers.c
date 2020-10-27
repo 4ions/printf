@@ -69,7 +69,7 @@ int nBinary(va_list list)
 
 	for (i = i - 1; i >= 0; i--)
 	{
-		_printf("%d", a[i]);
+		_ourPrint('0' + a[i]);
 		size++;
 	}
 	return (size);
