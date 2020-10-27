@@ -25,6 +25,7 @@ unsigned int base_len(unsigned int num, int base);
 char *rev_string(char *s);
 char *_memcpy(char *dest, char *src, unsigned int n);
 void write_base(char *str);
+int printr(va_list list);
 
 #endif
 
