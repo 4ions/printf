@@ -14,7 +14,7 @@ int (*verification(char a))(va_list)
 		{'d', printd},
 		{'i', printi},
 		{'b', nBinary},
-		{'r', rev_string},
+		{'r', printr},
 		{'\0', '\0'}
 	};
 	int i = 0;

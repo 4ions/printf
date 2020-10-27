@@ -52,3 +52,23 @@ int _ourPrint(char c)
 	return (write(1, &c, 1));
 
 }
+
+int printr(va_list list)
+{
+	int i;
+	char *str, *dest;
+
+	str = va_arg(list, char *);
+	if (str == NULL)
+		return (-1);
+	dest = rev_string(str);
+	if(dest == NULL)
+		return (-1);
+
+	for (i = 0; dest[i] != '\0'; i++)
+	{
+		_ourPrint(dest[i]);
+	}
+	free(dest);
+	return (i);
+}
