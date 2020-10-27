@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * printd - Function that prints numbers, followed by a new line
@@ -56,21 +57,91 @@ int printi(va_list list)
  */
 int nBinary(va_list list)
 {
-	int i, size;
-	unsigned int n, a[1024];
-
-	n = va_arg(list, int);
-
-	for (i = 0; n > 0; i++)
+	unsigned int num;
+	int i, len;
+	char *str;
+	char *rev_str;
+	
+	num = va_arg(list, unsigned int);
+	if(num == 0)
+		return (_ourPrint('0'));
+	if (num < 1)
+		return (-1);
+	len = base_len(num, 2);
+	str = malloc(sizeof(char) * len + 1);
+	if(str == NULL)
 	{
-		a[i] = n % 2;
-		n = n / 2;
+		return (-1);
 	}
-
-	for (i = i - 1; i >= 0; i--)
+	for (i = 0; num > 0; i++)
 	{
-		_ourPrint('0' + a[i]);
-		size++;
+		if (num % 2 == 0)
+		{
+			str[i]  = '0';
+		}
+		else
+			str[i] = '1';
+		num = num / 2;
 	}
-	return (size);
+	str[i] = '\0';
+	rev_str = rev_string(str);
+	if (rev_str == NULL)
+		return (-1);
+	write_base(rev_str);
+	free(str);
+	free(rev_str);
+	return (len);
+}
+
+unsigned int base_len(unsigned int num, int base)
+{
+	unsigned int i;
+
+	for (i = 0; num > 0; i++)
+	{
+		num = num / base;
+	}
+	return i;
+}
+
+char *rev_string(char *s)
+{
+	int len, head;
+	char tmp;
+	char *dest;
+
+	for (len = 0; s[len] != '\0'; len++)
+	{}
+
+	dest = malloc(sizeof(char) * len + 1);
+	if (dest == NULL)
+	{
+		return (NULL);
+	}
+	_memcpy(dest, s, len);
+	for (head = 0; head < len; head++, len--)
+	{
+		tmp = dest[len - 1];
+		dest[len - 1] = dest[head];
+		dest[head] = tmp;
+	}
+	return (dest);
+}
+
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+		dest[i] = src[i];
+	dest[i] = '\0';
+	return (dest);
+}
+
+void write_base(char *str)
+{
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+		_ourPrint(str[i]);
 }
