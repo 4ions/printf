@@ -61,15 +61,15 @@ int nBinary(va_list list)
 	int i, len;
 	char *str;
 	char *rev_str;
-	
+
 	num = va_arg(list, unsigned int);
-	if(num == 0)
+	if (num == 0)
 		return (_ourPrint('0'));
 	if (num < 1)
 		return (-1);
 	len = base_len(num, 2);
 	str = malloc(sizeof(char) * len + 1);
-	if(str == NULL)
+	if (str == NULL)
 	{
 		return (-1);
 	}
@@ -93,6 +93,13 @@ int nBinary(va_list list)
 	return (len);
 }
 
+/**
+ * base_len: ##
+ * @num: ##
+ * @base: ##
+ * Return: ##
+ */
+
 unsigned int base_len(unsigned int num, int base)
 {
 	unsigned int i;
@@ -101,8 +108,14 @@ unsigned int base_len(unsigned int num, int base)
 	{
 		num = num / base;
 	}
-	return i;
+	return (i);
 }
+
+/**
+ * rev_string: ##
+ * @s: ##
+ * Return: ##
+ */
 
 char *rev_string(char *s)
 {
@@ -128,6 +141,15 @@ char *rev_string(char *s)
 	return (dest);
 }
 
+
+/**
+ * _memcpy - ##
+ * @dest: ##
+ * @src: ##
+ * @n: ##
+ * Return: ##
+ */
+
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
@@ -137,6 +159,11 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 	dest[i] = '\0';
 	return (dest);
 }
+
+/**
+ * write_base - ##
+ * @str: ##
+ */
 
 void write_base(char *str)
 {
