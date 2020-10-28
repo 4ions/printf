@@ -94,10 +94,10 @@ int nBinary(va_list list)
 }
 
 /**
- * base_len -  ##
- * @num: ##
+ * base_len -  Base of a list of integers
+ * @num: int
  * @base: ##
- * Return: ##
+ * Return: Positive number
  */
 
 unsigned int base_len(unsigned int num, int base)
