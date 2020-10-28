@@ -53,6 +53,12 @@ int _ourPrint(char c)
 
 }
 
+/**
+ * printr - ##
+ * @list: ##
+ *  Return: ##
+ */
+
 int printr(va_list list)
 {
 	int i;
@@ -62,7 +68,7 @@ int printr(va_list list)
 	if (str == NULL)
 		return (-1);
 	dest = rev_string(str);
-	if(dest == NULL)
+	if (dest == NULL)
 		return (-1);
 
 	for (i = 0; dest[i] != '\0'; i++)
