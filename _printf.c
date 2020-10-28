@@ -1,10 +1,12 @@
 #include "holberton.h"
+
 /**
 *_printf - Functions to do the same that printf
 *@format: All the
 *
 *Return: Return int
 **/
+
 int _printf(const char *format, ...)
 {
 	va_list va_print;
