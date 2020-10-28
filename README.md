@@ -1,3 +1,5 @@
+![Holbi](https://www.holbertonschool.com/holberton-logo.png)
+
 # Project Requirements
 
 -   All files will be compiled on Ubuntu 14.04 LTS
