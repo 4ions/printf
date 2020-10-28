@@ -38,7 +38,7 @@ int printd(va_list list)
 }
 
 /**
- *printi - ##
+ *printi - Functions that return an integer
  * @list: Argument
  * Return: An integer
  */
@@ -51,7 +51,7 @@ int printi(va_list list)
 	return (num);
 }
 /**
- *nBinary - ##
+ *nBinary - Binary of an integer
  * @list: Argument
  * Return: An integer
  */
