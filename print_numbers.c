@@ -94,7 +94,7 @@ int nBinary(va_list list)
 }
 
 /**
- * base_len: ##
+ * base_len -  ##
  * @num: ##
  * @base: ##
  * Return: ##
@@ -112,7 +112,7 @@ unsigned int base_len(unsigned int num, int base)
 }
 
 /**
- * rev_string: ##
+ * rev_string - ##
  * @s: ##
  * Return: ##
  */
