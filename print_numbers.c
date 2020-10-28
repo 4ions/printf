@@ -112,8 +112,8 @@ unsigned int base_len(unsigned int num, int base)
 }
 
 /**
- * rev_string - ##
- * @s: ##
+ * rev_string - Revserse a string
+ * @s: String to reverse
  * Return: ##
  */
 
